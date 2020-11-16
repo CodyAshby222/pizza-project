@@ -2,8 +2,17 @@
   height: 100vh;
 }
 
+/* .pizza-stretch {
+  width: 90%;
+} */
+
 .overflow-row {
-  flex: content;
-  flex-direction: row;
-  overflow: hidden;
+  display: flex;
+
+  transform: translateX(-64%);
+}
+
+.img-flip {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
