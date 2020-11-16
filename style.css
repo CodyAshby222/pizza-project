@@ -1,0 +1,9 @@
+.pizza-bg {
+  height: 100vh;
+}
+
+.overflow-row {
+  flex: content;
+  flex-direction: row;
+  overflow: hidden;
+}
