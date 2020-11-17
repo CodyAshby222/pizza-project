@@ -42,7 +42,7 @@ body {
 }
 
 .modal-dialog {
-  max-width: 75%;
+  max-width: 65%;
 }
 
 #modal-dialog-thank-you {
@@ -78,6 +78,24 @@ body {
   color: #fbfffe;
   border-color: #fbfffe;
   background-color: #faa916;
+}
+
+.border {
+  border: 1px solid black;
+}
+
+.border-left-line {
+  border-left: 1px solid black;
+}
+
+.direction-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.pizza-size-button {
+  height: 20px;
+  width: 20px;
 }
 
 @media all and (max-width: 775px) {
