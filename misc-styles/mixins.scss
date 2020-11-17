@@ -1,0 +1,30 @@
+@mixin  my-transition($values...) {
+    -webkit-transition: $values;
+    -moz-transition: $values;
+    -o-transition: $values;
+    transition: $values;
+}
+
+@mixin my-transition3($values...) {
+    -webkit-transition: $values;
+    -moz-transition: $values;
+    -o-transition: $values;
+    transition: $values;
+}
+
+@mixin my-transition2($propertiesToEffect, $duration, $delay){
+    -webkit-transition-property: $propertiesToEffect;
+    -webkit-transition-delay: $delay;
+    -webkit-transition-duration: $duration;
+    -webkit-transition-timing-function: linear;
+    transition-property: $propertiesToEffect;
+    transition-delay: $delay;
+    transition-duration: $duration;
+    transition-timing-function: linear;
+}
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
