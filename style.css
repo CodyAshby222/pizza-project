@@ -49,7 +49,7 @@
 }
 
 .modal-dialog {
-  max-width: 65%;
+  max-width: 500px;
 }
 
 #modal-dialog-thank-you {
@@ -135,6 +135,10 @@
   #modal-dialog-thank-you {
     width: 90%;
   }
+
+  body {
+    font-size: 0.75rem;
+  }
 }
 
 @media all and (max-width: 350px) {
@@ -144,6 +148,10 @@
     left: 50%;
     bottom: 5%;
     transform: translate(-50%, -50%);
+  }
+
+  body {
+    font-size: 0.5rem;
   }
 }
 

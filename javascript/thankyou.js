@@ -1,6 +1,3 @@
-// pizza object
-
-// thank you section
 const thankYouId = document.getElementById("thank-you-message");
 let today = new Date();
 let hours = today.getHours();
