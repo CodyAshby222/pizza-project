@@ -16,6 +16,18 @@
   transform: scaleX(-1);
 }
 
+.pizza-box {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.toppings {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .btn-custom {
   color: #1b1b1e;
   background-color: #faa916;
