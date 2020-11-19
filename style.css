@@ -92,7 +92,11 @@
 }
 
 .border-left-line {
-  border-left: 1px solid black;
+  border-left: 1px solid #6d676e;
+}
+
+.border-btm-line {
+  border-bottom: 1px solid #6d676e;
 }
 
 .direction-column {
@@ -153,6 +157,14 @@
   body {
     font-size: 0.5rem;
   }
+  .pizza-size-button {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+.modal-footer {
+  justify-content: space-between;
 }
 
 /* 

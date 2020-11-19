@@ -12,7 +12,7 @@
   <title>Code-Pizza</title>
 </head>
 
-<body>
+<body id="body">
 
   <!-- Bootstrap Nav Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-off-white bg-raisin-black">
@@ -80,73 +80,81 @@
                 <div class="direction-column">
                   <div class="pizza-box">
                     <img src="images/cheese-pizza.png" class="img-fluid" alt="Responsive image">
-                    <!-- <img src="full-topping-imgs/Artboard 1.png" class="img-fluid toppings" alt="" srcset="">
-                    <img src="left-topping-imgs/Artboard 2.png" class="img-fluid toppings" alt="" srcset=""> -->
+                    <div id="pizzaToppingDisplay"></div>
 
                   </div>
-
-                  <h2>Your Order:</h2>
-                  <p>Large Pizza</p>
+                  <br>
+                  <h3><b>Your Order</b>:</h3>
                   <p></p>
-                  <p>Toppings:</p>
+                  <h6 id="orderSize">Small Pizza</h6>
+                  <p></p>
+                  <p><b>Toppings:</b></p>
                   <li>Cheese</li>
                   <div id="addedToppings"></div>
-                  <h3>Total:</h3>
-                  <div id="totalPrice"></div>
+              
+                  
 
                 </div>
               </div>
               <div class="col-7 border-left-line">
                 <!-- Users Topping Selection -->
-                <input type="checkbox"> Pepperoni:
-                <img class="pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                <h5>Size:</h5>
+                <input class="sizeBtn Small" type="radio" name="choice" checked="checked"> Small<br>
+                <input class="sizeBtn Medium" type="radio" name="choice"> Medium<br>
+                <input class="sizeBtn Large" type="radio" name="choice"> Large<br>
+                <input class="sizeBtn extraLarge" type="radio" name="choice"> Extra Large<br><br>
+                <div class="border-btm-line"></div><br>
+                <h5>Toppings:</h5>
+
+                Pepperoni:
+                <img class="pepperoni left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="pepperoni mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="pepperoni right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
                 
-                <input type="checkbox"> Chicken:
-                <img class="pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                Chicken:
+                <img class="chicken left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="chicken mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="chicken right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
 
-                <input type="checkbox"> Pineapple:
-                <img class="pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                Pineapple:
+                <img class="pineapple left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="pineapple mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="pineapple right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
 
-                <input type="checkbox"> Beef:
-                <img class="pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                Beef:
+                <img class="beef left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="beef mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="beef right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
 
-                <input type="checkbox"> Green Peppers:
-                <img class="pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                Green Peppers:
+                <img class="green-peppers left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="green-peppers mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="green-peppers right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
 
-                <input type="checkbox"> Jalapenos:
-                <img class="pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                Jalapenos:
+                <img class="jalapenos left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="jalapenos mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="jalapenos right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
 
-                <input type="checkbox"> Sausage:
-                <img class="pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                Sausage:
+                <img class="sausage left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="sausage mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="sausage right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
 
-                <input type="checkbox"> Steak:
-                <img class="pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                Steak:
+                <img class="steak left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="steak mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="steak right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
 
-                <input type="checkbox"> Tomatoes:
-                <img class="pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                Tomatoes:
+                <img class="tomatoes left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="tomatoes mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="tomatoes right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
 
-                <input type="checkbox"> Corn:
-                <img class="pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                Corn:
+                <img class="corn left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="corn mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="corn right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
 
               </div>
             </div>
@@ -154,9 +162,12 @@
           </div>
         </div>
         <div class="modal-footer">
+          <div id="totalPrice">Total:</div>
+         <div>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="modal"
             data-target="#thankYouModal">Save changes</button>
+          </div>
         </div>
       </div>
     </div>
@@ -191,6 +202,7 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <script src="javascript/thankyou.js"></script>
+  <script src="javascript/pizza.js"></script>
 </body>
 
 </html>
