@@ -242,9 +242,24 @@ bodyId.addEventListener("click", () => {
   filterAllToppings();
   addedToppingsId.innerHTML = displayToppings();
   pizzaToppingDisplayId.innerHTML = updatePizzaDisplay();
+  let toppingPrice = 0;
+  pizza.allToppings.forEach(priceOfToppings);
+  toppingPrice++;
   console.log(pizza.price);
-  totalPriceId.innerHTML = pizza.price;
+  totalPriceId.innerHTML = `Total: $${pizza.price}.00`;
 });
+
+function priceOfToppings(toppingPrice) {
+  if (toppingPrice = 1){
+      pizza.price = pizza.price;
+  }
+  else if (toppingPrice != 1){
+    pizza.price = pizza.price += toppingPrice - 1;
+  }
+  else if (toppingPrice = 5){
+    pizza.price = 3;
+  }
+}
 
 //Submit/Close - Resets all of pizza
 
