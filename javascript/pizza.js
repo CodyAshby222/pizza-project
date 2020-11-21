@@ -253,13 +253,16 @@ function priceOfToppings(toppingPrice) {
   if (pizza.allToppings.length === 1) {
     toppingPrice = pizza.price;
     console.log("First IF");
-  } else if (pizza.allToppings.length !== 1) {
-    pizza.price = pizza.price += toppingPrice - 1;
+  } else if (pizza.allToppings.length >= 1 && pizza.allToppings.length !== 5) {
+    toppingPrice = pizza.price + toppingPrice - 6;
+    console.log(pizza.price);
+    console.log("toppingPrice:" + toppingPrice)
     console.log("Second IF");
   } else if (pizza.allToppings.length === 5) {
-    pizza.price = 3;
+    toppingPrice = 8;
     console.log("Third IF");
   }
+  //This function is only workable with Small
   totalPriceId.innerHTML = "Total: $" + toppingPrice;
 }
 
