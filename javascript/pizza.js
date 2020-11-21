@@ -15,6 +15,11 @@ const steakClass = document.querySelectorAll(".steak");
 const tomatoesClass = document.querySelectorAll(".tomatoes");
 const cornClass = document.querySelectorAll(".corn");
 const bodyId = document.getElementById("body");
+const prePepId = document.getElementById("prePep");
+const preMeatId = document.getElementById("preMeat");
+const preVeggieId = document.getElementById("preVeggie");
+const preSupremeId = document.getElementById("preSupreme");
+const preAllOutId = document.getElementById("preAll");
 
 // Pizza Object
 let pizza = {
@@ -95,7 +100,6 @@ function toppings(toppingsClass, specificSide, imgSide, pizzaObject) {
         filterExtra(pizza.allToppings);
         filterExtra(pizzaObject);
       }
-      pizzaToppingDisplayId.innerHTML = updatePizzaDisplay();
     });
   });
 }
@@ -187,7 +191,72 @@ toppings(cornClass, "left", "left", pizza.leftToppings);
 toppings(cornClass, "mid", "full", pizza.fullToppings);
 toppings(cornClass, "right", "right", pizza.rightToppings);
 
+//Pre-built Pizzas
+
+prePepId.addEventListener("click", () => {
+  preBuiltPizza(pepperoniClass[1]);
+});
+
+preMeatId.addEventListener("click", () => {
+  preBuiltPizza(sausageClass[1]);
+  preBuiltPizza(chickenClass[1]);
+  preBuiltPizza(pepperoniClass[1]);
+  preBuiltPizza(steakClass[1]);
+});
+
+preVeggieId.addEventListener("click", () => {
+  preBuiltPizza(tomatoesClass[1]);
+  preBuiltPizza(greenPeppersClass[1]);
+  preBuiltPizza(cornClass[1]);
+});
+
+preSupremeId.addEventListener("click", () => {
+  preBuiltPizza(pepperoniClass[1]);
+  preBuiltPizza(greenPeppersClass[1]);
+  preBuiltPizza(beefClass[1]);
+});
+
+preAllOutId.addEventListener("click", () => {
+  preBuiltPizza(pepperoniClass[1]);
+  preBuiltPizza(sausageClass[1]);
+  preBuiltPizza(tomatoesClass[1]);
+  preBuiltPizza(jalapenosClass[1]);
+  preBuiltPizza(chickenClass[1]);
+  preBuiltPizza(pineappleClass[1]);
+  preBuiltPizza(beefClass[1]);
+  preBuiltPizza(greenPeppersClass[1]);
+  preBuiltPizza(steakClass[1]);
+  preBuiltPizza(cornClass[1]);
+});
+
+function preBuiltPizza(firstTopping) {
+  firstTopping.classList.add("active");
+  pizza.fullToppings.push(firstTopping.classList[0]);
+  pizza.allToppings.push(firstTopping.classList[0]);
+  firstTopping.src = `images/fullactive.png`;
+}
+
+//BodyClicker - Updates Pizza and Displays
+
 bodyId.addEventListener("click", () => {
   filterAllToppings();
   addedToppingsId.innerHTML = displayToppings();
+  pizzaToppingDisplayId.innerHTML = updatePizzaDisplay();
+  console.log(pizza.price);
+  totalPriceId.innerHTML = pizza.price;
 });
+
+//Submit/Close - Resets all of pizza
+
+//updatePrice function
+//let counter = 0;
+//pizza.allToppings.forEach
+//counter++;
+
+//if five toppings do this
+
+//counter = 4;
+//pizza.price += counter;
+//pizza.price = 9;
+
+//totalPriceId.innerHtml = `Total: ${pizza.price}`;

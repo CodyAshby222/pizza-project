@@ -1,6 +1,6 @@
 .pizza-bg {
   width: 100%;
-  height: 91vh;
+  /* height: 91vh; */
 }
 
 .pizza-vertical-bg {
@@ -32,14 +32,14 @@
   color: #1b1b1e;
   background-color: #faa916;
   border-color: #faa916;
-  border: 1px solid #1b1b1e;
-  font-size: 2rem;
+  /* border: 1px solid #1b1b1e; */
+
   font-weight: 500;
 }
 
 .order-btn {
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 65%;
 }
 
@@ -109,6 +109,62 @@
   width: 20px;
 }
 
+.pepperoni-btn {
+  position: absolute;
+  top: 30%;
+  left: 65%;
+}
+
+.pepperoni-vertical-btn {
+  display: none;
+}
+
+.meat-btn {
+  position: absolute;
+  top: 40%;
+  left: 65%;
+}
+
+.meat-vertical-btn {
+  display: none;
+}
+
+.veggie-btn {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+}
+
+.veggie-vertical-btn {
+  display: none;
+}
+
+.supreme-btn {
+  position: absolute;
+  top: 60%;
+  left: 65%;
+}
+
+.supreme-vertical-btn {
+  display: none;
+}
+
+.allout-btn {
+  position: absolute;
+  top: 70%;
+  left: 65%;
+}
+
+.allout-vertical-btn {
+  display: none;
+}
+
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
 @media all and (max-width: 775px) {
   .pizza-bg {
     display: none;
@@ -117,7 +173,7 @@
     display: block;
     position: relative;
     width: 100%;
-    height: 91vh;
+    /* height: 91vh; */
   }
 
   .order-btn {
@@ -128,7 +184,67 @@
     display: block;
     position: absolute;
     left: 50%;
+    bottom: 35%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pepperoni-btn {
+    display: none;
+  }
+
+  .pepperoni-vertical-btn {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 30%;
+    transform: translate(-50%, -50%);
+  }
+
+  .meat-btn {
+    display: none;
+  }
+
+  .meat-vertical-btn {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    transform: translate(-50%, -50%);
+  }
+
+  .veggie-btn {
+    display: none;
+  }
+
+  .veggie-vertical-btn {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    transform: translate(-50%, -50%);
+  }
+
+  .supreme-btn {
+    display: none;
+  }
+
+  .supreme-vertical-btn {
+    display: block;
+    position: absolute;
+    left: 50%;
     bottom: 15%;
+    transform: translate(-50%, -50%);
+  }
+
+  .allout-btn {
+    display: none;
+  }
+
+  .allout-vertical-btn {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
     transform: translate(-50%, -50%);
   }
 
@@ -146,14 +262,6 @@
 }
 
 @media all and (max-width: 350px) {
-  .order-vertical-btn {
-    display: block;
-    position: absolute;
-    left: 50%;
-    bottom: 5%;
-    transform: translate(-50%, -50%);
-  }
-
   body {
     font-size: 0.5rem;
   }
