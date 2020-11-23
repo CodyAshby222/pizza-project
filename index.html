@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
-  <title>Code-Pizza</title>
+  <title>Pizza</title>
 </head>
 
 <body id="body">
 
   <!-- Bootstrap Nav Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-off-white bg-raisin-black">
+  <nav class="navbar navbar-expand-lg navbar-light navbar-off-white bg-raisin-black">
     <a class="navbar-brand" href="#"><b>Code-Pizza</b></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,66 +46,76 @@
   </nav>
 
   <!-- Background Images -->
-  <img class="pizza-bg" src="images/pizzaHome-01 (2).png" alt="">
-  <img class="pizza-vertical-bg" src="images/pizzaHome-01 - Vertical.png" alt="">
+  <div class="pizza-box">
+  <img class="pizza-bg" src="images/Home.png" alt="">
+<!-- Customize -->
+      <div class="order-txt"><h4 class="border-btm-line">Customize Your Own Pizza! </h4><li>Start From Scratch!</li><li>First Topping <b>FREE!</b></li><li>5+ Toppings = <b>SPECIAL DEAL!</b>  </li></div>
+    <button type="button" class="order-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
+      Customize
+    </button>
+</div>
 
 
-  <!-- Customize -->
-  <button type="button" class="order-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-    Customize Your Own Pizza!
-  </button>
-  <button type="button" class="order-vertical-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-    Customize Your Own Pizza!
-  </button>
+<div class="pizza-box">
+  <img class="pizza-bg" src="images/Pep.png" alt="">
+<!-- Pepperoni -->
+<div class="order-txt-2"><h4 class="border-btm-line">Start With Pepperoni! </h4><li>Smoked Pepperoni</li><li><b>FREE Topping</b></li><li>For Only $5!</b></li></div>
+<button id="prePep" type="button" class="order-btn-2 btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
+  Customize
+</button>
+</div>
 
-  <!-- Pepperoni -->
-  <button id="prePep" type="button" class="pepperoni-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-    Pepperoni
-  </button>
-  <button id="prePep" type="button" class="pepperoni-vertical-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-    Pepperoni
-  </button>
+<div class="pizza-box">
+  <img class="pizza-bg" src="images/Meat.png" alt="">
+<!-- Meat -->
+<div class="order-txt"><h4 class="border-btm-line">For All The Meat Lovers!</h4><li>Pepperoni, Beef, Chicken, Sausage, and Steak!</li><li><b>SPECIAL DEAL!</b></li></div>
+<button id="preMeat" type="button" class="order-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
+  Customize
+</button>
+</div>
 
-  <!-- Meat -->
-  <button id="preMeat" type="button" class="meat-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-    Meat Lovers
-  </button>
-  <button id="preMeat" type="button" class="meat-vertical-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-    Meat Lovers
-  </button>
+<div class="pizza-box">
+  <img class="pizza-bg" src="images/Veggie.png" alt="">
+<!-- Veggie -->
+<div class="order-txt-2"><h4 class="border-btm-line">Our Healthy Veggie Pizza!</h4><li>Green Peppers, Tomatoes,<br> Pineapple, and Corn!</li><li>Thin Crust!</b></li></div>
+<button id="preVeggie" type="button" class="order-btn-2 btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
+  Customize
+</button>
+</div>
 
-  <!-- Veggie -->
-  <button id="preVeggie" type="button" class="veggie-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-    Veggie
-  </button>
-  <button id="preVeggie" type="button" class="veggie-vertical-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-    Veggie
-  </button>
+<div class="pizza-box">
+  <img class="pizza-bg" src="images/Supreme.png" alt="">
+<!-- Supreme -->
+<div class="order-txt"><h4 class="border-btm-line">The Supreme Dream!</h4><li>Pepperoni, Beef, Tomatoes,<br>  and Green Peppers!</li><li>Thick Crust!</b></li></div>
+<button id="preSupreme" type="button" class="order-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
+  Customize
+</button>
+</div>
 
-  <!-- Supreme -->
-  <button id="preSupreme" type="button" class="supreme-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-    Supreme
-  </button>
-  <button id="preSupreme" type="button" class="supreme-vertical-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-    Supreme
-  </button>
-
+<div class="pizza-box">
+  <img class="pizza-bg" src="images/All.png" alt="">
   <!-- AllOut -->
-  <button id="preAll" type="button" class="allout-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-    All Out!
+  <div class="order-txt-2"><h4 class="border-btm-line">ALL OUT BABY! </h4><li><b>All Ten Toppings!</b></li><li>First Topping Still <b>FREE!</b></li><li><b>SPECIAL DEAL!</b></li></div>
+  <button id="preAll" type="button" class="order-btn-2 btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
+   Customize
   </button>
-  <button id="preAll" type="button" class="allout-vertical-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-    All Out!
-  </button>
+</div>
+
+
+
+
+
+
+  
 
   <!-- Customize Pizza Page/Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  <div class="modal fade" id="exampleModalCenter" style="padding-left: 0px; padding-right: 0px;" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title" id="exampleModalCenterTitle">Customize Your Own Pizza!</h2>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close closeButton" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -127,8 +137,8 @@
                   <h6 id="orderSize">Small Pizza</h6>
                   <p></p>
                   <p><b>Toppings:</b></p>
-                  <li>cheese</li>
                   <div id="addedToppings"></div>
+                  
               
                   
 
@@ -136,64 +146,78 @@
               </div>
               <div class="col-7 border-left-line">
                 <!-- Users Topping Selection -->
-                <h5>Size:</h5>
+                <h5><b>Size:</b></h5>
                 <input class="sizeBtn Small" type="radio" name="choice" checked="checked"> Small<br>
                 <input class="sizeBtn Medium" type="radio" name="choice"> Medium<br>
                 <input class="sizeBtn Large" type="radio" name="choice"> Large<br>
                 <input class="sizeBtn extraLarge" type="radio" name="choice"> Extra Large<br><br>
                 <div class="border-btm-line"></div><br>
-                <h5>Toppings:</h5>
-
+                <h5><b>Toppings:</b></h5>
+                <div class="row">
+                <div class="col-5 column-large">
+                  <p></p>
+                <h6>Meats</h6>
                 Pepperoni:
                 <img class="pepperoni left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
                 <img class="pepperoni mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="pepperoni right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                <img class="pepperoni right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input class="double" type="checkbox"> Extra: <input class="extra" type="checkbox"><br><br>
                 
                 Chicken:
                 <img class="chicken left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
                 <img class="chicken mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="chicken right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
-
-                Pineapple:
-                <img class="pineapple left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="pineapple mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="pineapple right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
-
+                <img class="chicken right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input class="double" type="checkbox"> Extra: <input class="extra" type="checkbox"><br><br>
+              
                 Beef:
                 <img class="beef left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
                 <img class="beef mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="beef right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
-
-                Green Peppers:
-                <img class="greenpeppers left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="greenpeppers mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="greenpeppers right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
-
-                Jalapenos:
-                <img class="jalapenos left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="jalapenos mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="jalapenos right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
-
+                <img class="beef right pizza-size-button" src="images/rightcircle.png" alt="" srcset="">
+                <br>Double: <input class="double" type="checkbox"> Extra: <input class="extra" type="checkbox"><br><br>
+                           
                 Sausage:
                 <img class="sausage left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
                 <img class="sausage mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="sausage right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                <img class="sausage right pizza-size-button" src="images/rightcircle.png" alt="" srcset="">
+                <br>Double: <input class="double"  type="checkbox"> Extra: <input class="extra" type="checkbox"><br><br>
 
                 Steak:
                 <img class="steak left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
                 <img class="steak mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="steak right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
-
-                Tomatoes:
-                <img class="tomatoes left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
-                <img class="tomatoes mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="tomatoes right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                <img class="steak right pizza-size-button" src="images/rightcircle.png" alt="" srcset="">
+                <br>Double: <input class="double" type="checkbox"> Extra: <input class="extra" type="checkbox"><br><br>
+              </div>
+              <div class="col-5 border-left-line column-large">
+                <p></p>
+                <h6>Vegetables/Fruit</h6>
+                Green Peppers:
+                <img class="greenpeppers left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="greenpeppers mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="greenpeppers right pizza-size-button" src="images/rightcircle.png" alt="" srcset="">
+                <br>Double: <input class="double" type="checkbox"> Extra: <input class="extra" type="checkbox"><br><br>
 
                 Corn:
                 <img class="corn left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
                 <img class="corn mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
-                <img class="corn right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input type="checkbox"> Extra: <input type="checkbox"><br><br>
+                <img class="corn right pizza-size-button" src="images/rightcircle.png" alt="" srcset="">
+                <br>Double: <input class="double" type="checkbox"> Extra: <input class="extra" type="checkbox"><br><br>
 
+                Jalapenos:
+                <img class="jalapenos left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="jalapenos mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="jalapenos right pizza-size-button" src="images/rightcircle.png" alt="" srcset="">
+                <br>Double: <input class="double" type="checkbox"> Extra: <input class="extra" type="checkbox"><br><br>
+
+                Tomatoes:
+                <img class="tomatoes left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="tomatoes mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="tomatoes right pizza-size-button" src="images/rightcircle.png" alt="" srcset="">
+                <br>Double: <input class="double" type="checkbox"> Extra: <input class="extra" type="checkbox"><br><br>
+
+                Pineapple:
+                <img class="pineapple left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
+                <img class="pineapple mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
+                <img class="pineapple right pizza-size-button" src="images/rightcircle.png" alt="" srcset=""><br>Double: <input class="double" type="checkbox"> Extra: <input class="extra" type="checkbox"><br><br>
+              </div>
+            </div>
               </div>
             </div>
 
@@ -202,9 +226,9 @@
         <div class="modal-footer">
           <div id="totalPrice">Total:</div>
          <div>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button class="closeButton" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="modal"
-            data-target="#thankYouModal">Order Now</button>
+            data-target="#thankYouModal">Add To Order</button>
           </div>
         </div>
       </div>
@@ -218,11 +242,12 @@
       <div class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title" id="thankYouModalTitle">Thank You For Your Order!</h2>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close closeButton" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
+          <p id="thank-you-message2"></p>
           <p id="thank-you-message"></p>
         </div>
       </div>
@@ -239,8 +264,10 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-  <script src="javascript/thankyou.js"></script>
-  <script src="javascript/pizza.js"></script>
+   
+    <script src="javascript/pizza.js"></script>
+  
+  
 </body>
 
 </html>

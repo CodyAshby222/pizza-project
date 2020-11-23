@@ -1,4 +1,3 @@
-//pizza object
 const addedToppingsId = document.getElementById("addedToppings");
 const totalPriceId = document.getElementById("totalPrice");
 const pizzaToppingDisplayId = document.getElementById("pizzaToppingDisplay");
@@ -20,6 +19,10 @@ const preMeatId = document.getElementById("preMeat");
 const preVeggieId = document.getElementById("preVeggie");
 const preSupremeId = document.getElementById("preSupreme");
 const preAllOutId = document.getElementById("preAll");
+const doubleClass = document.getElementsByClassName("double");
+const extraClass = document.getElementsByClassName("extra");
+const thankYouIdTwo = document.getElementById("thank-you-message2");
+const closeBtnClass = document.getElementsByClassName("closeButton");
 
 // Pizza Object
 let pizza = {
@@ -36,22 +39,26 @@ let pizza = {
   price: 5,
 };
 
-// Size - Changes Pizza value per radio click
+// Size/Price - Changes Pizza size/price per radio click
 
 sizeBtnClass[0].addEventListener("click", () => {
   size(0, 6);
+  pizza.price = 5;
 });
 
 sizeBtnClass[1].addEventListener("click", () => {
   size(1, 5);
+  pizza.price = 6;
 });
 
 sizeBtnClass[2].addEventListener("click", () => {
   size(2, 4);
+  pizza.price = 7;
 });
 
 sizeBtnClass[3].addEventListener("click", () => {
   size(3, 3);
+  pizza.price = 8;
 });
 
 function size(btnNum, textSize) {
@@ -68,7 +75,14 @@ function size(btnNum, textSize) {
 
 //Toppings
 
-function toppings(toppingsClass, specificSide, imgSide, pizzaObject) {
+function toppings(
+  toppingsClass,
+  specificSide,
+  imgSide,
+  pizzaObject,
+  double,
+  extra
+) {
   toppingsClass.forEach((item) => {
     item.addEventListener("click", () => {
       const i = pizzaObject.indexOf(item.classList[0]);
@@ -84,6 +98,7 @@ function toppings(toppingsClass, specificSide, imgSide, pizzaObject) {
         item.src = `images/${imgSide}active.png`;
         pizzaObject.push(item.classList[0]);
         pizza.allToppings.push(item.classList[0]);
+        dblExEnable(double, extra);
       } else if (
         item.classList[1] === `${specificSide}` &&
         item.classList[3] === "active"
@@ -99,6 +114,7 @@ function toppings(toppingsClass, specificSide, imgSide, pizzaObject) {
         }
         filterExtra(pizza.allToppings);
         filterExtra(pizzaObject);
+        dblExDisable(double, extra);
       }
     });
   });
@@ -130,11 +146,12 @@ function defaultButtonSides(toppingsClass) {
 }
 
 function displayToppings() {
-  let toppingList = "";
+  let toppingList = "cheese, ";
   pizza.allToppings.forEach((item) => {
-    toppingList += `<li>${item}</li>`;
+    toppingList += ` ${item},`;
   });
-  return toppingList;
+  let modifiedToppingList = toppingList.slice(0, -1); //'abcde'
+  return modifiedToppingList;
 }
 
 function updatePizzaDisplay() {
@@ -151,50 +168,261 @@ function updatePizzaDisplay() {
   return imgs;
 }
 
-toppings(pepperoniClass, "left", "left", pizza.leftToppings);
-toppings(pepperoniClass, "mid", "full", pizza.fullToppings);
-toppings(pepperoniClass, "right", "right", pizza.rightToppings);
+toppings(
+  pepperoniClass,
+  "left",
+  "left",
+  pizza.leftToppings,
+  doubleClass[0],
+  extraClass[0]
+);
+toppings(
+  pepperoniClass,
+  "mid",
+  "full",
+  pizza.fullToppings,
+  doubleClass[0],
+  extraClass[0]
+);
+toppings(
+  pepperoniClass,
+  "right",
+  "right",
+  pizza.rightToppings,
+  doubleClass[0],
+  extraClass[0]
+);
 
-toppings(chickenClass, "left", "left", pizza.leftToppings);
-toppings(chickenClass, "mid", "full", pizza.fullToppings);
-toppings(chickenClass, "right", "right", pizza.rightToppings);
+toppings(
+  chickenClass,
+  "left",
+  "left",
+  pizza.leftToppings,
+  doubleClass[1],
+  extraClass[1]
+);
+toppings(
+  chickenClass,
+  "mid",
+  "full",
+  pizza.fullToppings,
+  doubleClass[1],
+  extraClass[1]
+);
+toppings(
+  chickenClass,
+  "right",
+  "right",
+  pizza.rightToppings,
+  doubleClass[1],
+  extraClass[1]
+);
 
-toppings(pineappleClass, "left", "left", pizza.leftToppings);
-toppings(pineappleClass, "mid", "full", pizza.fullToppings);
-toppings(pineappleClass, "right", "right", pizza.rightToppings);
+toppings(
+  beefClass,
+  "left",
+  "left",
+  pizza.leftToppings,
+  doubleClass[2],
+  extraClass[2]
+);
+toppings(
+  beefClass,
+  "mid",
+  "full",
+  pizza.fullToppings,
+  doubleClass[2],
+  extraClass[2]
+);
+toppings(
+  beefClass,
+  "right",
+  "right",
+  pizza.rightToppings,
+  doubleClass[2],
+  extraClass[2]
+);
 
-toppings(beefClass, "left", "left", pizza.leftToppings);
-toppings(beefClass, "mid", "full", pizza.fullToppings);
-toppings(beefClass, "right", "right", pizza.rightToppings);
+toppings(
+  sausageClass,
+  "left",
+  "left",
+  pizza.leftToppings,
+  doubleClass[3],
+  extraClass[3]
+);
+toppings(
+  sausageClass,
+  "mid",
+  "full",
+  pizza.fullToppings,
+  doubleClass[3],
+  extraClass[3]
+);
+toppings(
+  sausageClass,
+  "right",
+  "right",
+  pizza.rightToppings,
+  doubleClass[3],
+  extraClass[3]
+);
 
-toppings(greenPeppersClass, "left", "left", pizza.leftToppings);
-toppings(greenPeppersClass, "mid", "full", pizza.fullToppings);
-toppings(greenPeppersClass, "right", "right", pizza.rightToppings);
+toppings(
+  steakClass,
+  "left",
+  "left",
+  pizza.leftToppings,
+  doubleClass[4],
+  extraClass[4]
+);
+toppings(
+  steakClass,
+  "mid",
+  "full",
+  pizza.fullToppings,
+  doubleClass[4],
+  extraClass[4]
+);
+toppings(
+  steakClass,
+  "right",
+  "right",
+  pizza.rightToppings,
+  doubleClass[4],
+  extraClass[4]
+);
 
-toppings(jalapenosClass, "left", "left", pizza.leftToppings);
-toppings(jalapenosClass, "mid", "full", pizza.fullToppings);
-toppings(jalapenosClass, "right", "right", pizza.rightToppings);
+toppings(
+  greenPeppersClass,
+  "left",
+  "left",
+  pizza.leftToppings,
+  doubleClass[5],
+  extraClass[5]
+);
+toppings(
+  greenPeppersClass,
+  "mid",
+  "full",
+  pizza.fullToppings,
+  doubleClass[5],
+  extraClass[5]
+);
+toppings(
+  greenPeppersClass,
+  "right",
+  "right",
+  pizza.rightToppings,
+  doubleClass[5],
+  extraClass[5]
+);
 
-toppings(sausageClass, "left", "left", pizza.leftToppings);
-toppings(sausageClass, "mid", "full", pizza.fullToppings);
-toppings(sausageClass, "right", "right", pizza.rightToppings);
+toppings(
+  cornClass,
+  "left",
+  "left",
+  pizza.leftToppings,
+  doubleClass[6],
+  extraClass[6]
+);
+toppings(
+  cornClass,
+  "mid",
+  "full",
+  pizza.fullToppings,
+  doubleClass[6],
+  extraClass[6]
+);
+toppings(
+  cornClass,
+  "right",
+  "right",
+  pizza.rightToppings,
+  doubleClass[6],
+  extraClass[6]
+);
 
-toppings(steakClass, "left", "left", pizza.leftToppings);
-toppings(steakClass, "mid", "full", pizza.fullToppings);
-toppings(steakClass, "right", "right", pizza.rightToppings);
+toppings(
+  jalapenosClass,
+  "left",
+  "left",
+  pizza.leftToppings,
+  doubleClass[7],
+  extraClass[7]
+);
+toppings(
+  jalapenosClass,
+  "mid",
+  "full",
+  pizza.fullToppings,
+  doubleClass[7],
+  extraClass[7]
+);
+toppings(
+  jalapenosClass,
+  "right",
+  "right",
+  pizza.rightToppings,
+  doubleClass[7],
+  extraClass[7]
+);
 
-toppings(tomatoesClass, "left", "left", pizza.leftToppings);
-toppings(tomatoesClass, "mid", "full", pizza.fullToppings);
-toppings(tomatoesClass, "right", "right", pizza.rightToppings);
+toppings(
+  tomatoesClass,
+  "left",
+  "left",
+  pizza.leftToppings,
+  doubleClass[8],
+  extraClass[8]
+);
+toppings(
+  tomatoesClass,
+  "mid",
+  "full",
+  pizza.fullToppings,
+  doubleClass[8],
+  extraClass[8]
+);
+toppings(
+  tomatoesClass,
+  "right",
+  "right",
+  pizza.rightToppings,
+  doubleClass[8],
+  extraClass[8]
+);
 
-toppings(cornClass, "left", "left", pizza.leftToppings);
-toppings(cornClass, "mid", "full", pizza.fullToppings);
-toppings(cornClass, "right", "right", pizza.rightToppings);
+toppings(
+  pineappleClass,
+  "left",
+  "left",
+  pizza.leftToppings,
+  doubleClass[9],
+  extraClass[9]
+);
+toppings(
+  pineappleClass,
+  "mid",
+  "full",
+  pizza.fullToppings,
+  doubleClass[9],
+  extraClass[9]
+);
+toppings(
+  pineappleClass,
+  "right",
+  "right",
+  pizza.rightToppings,
+  doubleClass[9],
+  extraClass[9]
+);
 
 //Pre-built Pizzas
 
 prePepId.addEventListener("click", () => {
   preBuiltPizza(pepperoniClass[1]);
+  dblExEnable(doubleClass[0], extraClass[0]);
 });
 
 preMeatId.addEventListener("click", () => {
@@ -202,18 +430,32 @@ preMeatId.addEventListener("click", () => {
   preBuiltPizza(chickenClass[1]);
   preBuiltPizza(pepperoniClass[1]);
   preBuiltPizza(steakClass[1]);
+  preBuiltPizza(beefClass[1]);
+  dblExEnable(doubleClass[0], extraClass[0]);
+  dblExEnable(doubleClass[1], extraClass[1]);
+  dblExEnable(doubleClass[2], extraClass[2]);
+  dblExEnable(doubleClass[3], extraClass[3]);
+  dblExEnable(doubleClass[4], extraClass[4]);
 });
 
 preVeggieId.addEventListener("click", () => {
   preBuiltPizza(tomatoesClass[1]);
   preBuiltPizza(greenPeppersClass[1]);
   preBuiltPizza(cornClass[1]);
+  dblExEnable(doubleClass[5], extraClass[5]);
+  dblExEnable(doubleClass[6], extraClass[6]);
+  dblExEnable(doubleClass[8], extraClass[8]);
 });
 
 preSupremeId.addEventListener("click", () => {
   preBuiltPizza(pepperoniClass[1]);
+  preBuiltPizza(tomatoesClass[1]);
   preBuiltPizza(greenPeppersClass[1]);
   preBuiltPizza(beefClass[1]);
+  dblExEnable(doubleClass[5], extraClass[5]);
+  dblExEnable(doubleClass[0], extraClass[0]);
+  dblExEnable(doubleClass[8], extraClass[8]);
+  dblExEnable(doubleClass[2], extraClass[2]);
 });
 
 preAllOutId.addEventListener("click", () => {
@@ -227,6 +469,16 @@ preAllOutId.addEventListener("click", () => {
   preBuiltPizza(greenPeppersClass[1]);
   preBuiltPizza(steakClass[1]);
   preBuiltPizza(cornClass[1]);
+  dblExEnable(doubleClass[0], extraClass[0]);
+  dblExEnable(doubleClass[1], extraClass[1]);
+  dblExEnable(doubleClass[2], extraClass[2]);
+  dblExEnable(doubleClass[3], extraClass[3]);
+  dblExEnable(doubleClass[4], extraClass[4]);
+  dblExEnable(doubleClass[5], extraClass[5]);
+  dblExEnable(doubleClass[6], extraClass[6]);
+  dblExEnable(doubleClass[7], extraClass[7]);
+  dblExEnable(doubleClass[8], extraClass[8]);
+  dblExEnable(doubleClass[9], extraClass[9]);
 });
 
 function preBuiltPizza(firstTopping) {
@@ -236,45 +488,167 @@ function preBuiltPizza(firstTopping) {
   firstTopping.src = `images/fullactive.png`;
 }
 
+//Updates Price On Bottom Left
+
+function priceOfToppings(toppingPrice, totalToppings) {
+  toppingPrice += totalToppings;
+
+  if (totalToppings > 0) {
+    toppingPrice -= 1;
+  }
+  if (totalToppings > 4) {
+    toppingPrice -= 1;
+    totalPriceId.innerHTML = "<b>SPECIAL DEAL!</b><br>Total: $" + toppingPrice;
+  } else {
+    totalPriceId.innerHTML = "Total: $" + toppingPrice;
+  }
+  thankYouIdTwo.innerHTML = "<h4>Your Total is $" + toppingPrice + ".00</h4>";
+}
+
+//Extra/Double
+function dblExEnable(toppingDbl, toppingExtra) {
+  toppingDbl.removeAttribute("disabled");
+  toppingExtra.removeAttribute("disabled");
+
+  toppingDbl.addEventListener("click", () => {
+    if (toppingDbl.checked) {
+      toppingExtra.checked = false;
+    }
+  });
+
+  toppingExtra.addEventListener("click", () => {
+    if (toppingExtra.checked) {
+      toppingDbl.checked = false;
+    }
+  });
+}
+
+function dblExDisable(toppingDbl, toppingExtra) {
+  toppingDbl.setAttribute("disabled", "disabled");
+  toppingExtra.setAttribute("disabled", "disabled");
+  toppingDbl.setAttribute("checked", "checked");
+  toppingExtra.setAttribute("checked", "checked");
+  toppingDbl.checked = false;
+  toppingExtra.checked = false;
+}
+
+function doubleExtraPrice(double, extra) {
+  let total = 0;
+  for (item of double) {
+    if (item.checked) {
+      total += 1;
+    }
+  }
+  for (item of extra) {
+    if (item.checked) {
+      total += 1;
+    }
+  }
+  return total;
+}
+
+dblExDisable(doubleClass[0], extraClass[0]);
+dblExDisable(doubleClass[1], extraClass[1]);
+dblExDisable(doubleClass[2], extraClass[2]);
+dblExDisable(doubleClass[3], extraClass[3]);
+dblExDisable(doubleClass[4], extraClass[4]);
+dblExDisable(doubleClass[5], extraClass[5]);
+dblExDisable(doubleClass[6], extraClass[6]);
+dblExDisable(doubleClass[7], extraClass[7]);
+dblExDisable(doubleClass[8], extraClass[8]);
+dblExDisable(doubleClass[9], extraClass[9]);
+
 //BodyClicker - Updates Pizza and Displays
 
 bodyId.addEventListener("click", () => {
   filterAllToppings();
   addedToppingsId.innerHTML = displayToppings();
   pizzaToppingDisplayId.innerHTML = updatePizzaDisplay();
-  priceOfToppings(pizza.price);
+  priceOfToppings(
+    pizza.price,
+    pizza.allToppings.length + doubleExtraPrice(doubleClass, extraClass)
+  );
+  doubleExtraPrice(doubleClass, extraClass);
 });
 
-//Submit/Close - Resets all of pizza
+//Display Thank You
+const thankYouId = document.getElementById("thank-you-message");
+let today = new Date();
+let hours = today.getHours();
+let minutes = today.getMinutes() + 30;
+let am = "AM";
+let time = `${hours}:${minutes} ${am}`;
 
-function priceOfToppings(toppingPrice) {
-  toppingPrice += pizza.allToppings.length;
-  console.log(pizza.allToppings.length);
-  if (pizza.allToppings.length === 1) {
-    toppingPrice = pizza.price;
-    console.log("First IF");
-  } else if (pizza.allToppings.length >= 1 && pizza.allToppings.length !== 5) {
-    toppingPrice = pizza.price + toppingPrice - 6;
-    console.log(pizza.price);
-    console.log("toppingPrice:" + toppingPrice)
-    console.log("Second IF");
-  } else if (pizza.allToppings.length === 5) {
-    toppingPrice = 8;
-    console.log("Third IF");
+function displayThankYou() {
+  if (minutes > 59) {
+    updateTime();
   }
-  //This function is only workable with Small
-  totalPriceId.innerHTML = "Total: $" + toppingPrice;
+  if (hours > 11) {
+    updateMilitaryTime();
+  }
+  if (hours > 12) {
+    updateMilitaryTimePt2();
+  }
+  thankYouId.innerHTML = `<h6>Your order will be available for pick up at:<br>
+      ${time}</h6> `;
 }
 
-//updatePrice function
-//let counter = 0;
-//pizza.allToppings.forEach
-//counter++;
+function updateTime() {
+  minutes = minutes - 60;
+  hours = hours + 1;
+  time = `${hours}:${minutes} ${am}`;
+}
 
-//if five toppings do this
+function updateMilitaryTime() {
+  am = "PM";
+  time = `${hours}:${minutes} ${am}`;
+}
 
-//counter = 4;
-//pizza.price += counter;
-//pizza.price = 9;
+function updateMilitaryTimePt2() {
+  hours = hours - 12;
+  time = `${hours}:${minutes} ${am}`;
+}
 
-//totalPriceId.innerHtml = `Total: ${pizza.price}`;
+displayThankYou();
+
+//Submit/Close - Resets all of pizza
+closeBtnClass[0].addEventListener("click", () => {
+  fullReset();
+});
+
+closeBtnClass[1].addEventListener("click", () => {
+  fullReset();
+});
+
+closeBtnClass[2].addEventListener("click", () => {
+  fullReset();
+});
+
+function fullReset() {
+  defaultButtonSides(pepperoniClass);
+  defaultButtonSides(chickenClass);
+  defaultButtonSides(beefClass);
+  defaultButtonSides(sausageClass);
+  defaultButtonSides(steakClass);
+  defaultButtonSides(greenPeppersClass);
+  defaultButtonSides(cornClass);
+  defaultButtonSides(jalapenosClass);
+  defaultButtonSides(tomatoesClass);
+  defaultButtonSides(pineappleClass);
+  pizza.size = "small";
+  pizza.price = 5;
+  pizza.leftToppings = [];
+  pizza.fullToppings = [];
+  pizza.rightToppings = [];
+  pizza.allToppings = [];
+  dblExDisable(doubleClass[0], extraClass[0]);
+  dblExDisable(doubleClass[1], extraClass[1]);
+  dblExDisable(doubleClass[2], extraClass[2]);
+  dblExDisable(doubleClass[3], extraClass[3]);
+  dblExDisable(doubleClass[4], extraClass[4]);
+  dblExDisable(doubleClass[5], extraClass[5]);
+  dblExDisable(doubleClass[6], extraClass[6]);
+  dblExDisable(doubleClass[7], extraClass[7]);
+  dblExDisable(doubleClass[8], extraClass[8]);
+  dblExDisable(doubleClass[9], extraClass[9]);
+}
