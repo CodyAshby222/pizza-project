@@ -96,6 +96,7 @@ function toppings(
         defaultButtonSides(toppingsClass);
         item.classList.add("active");
         item.src = `images/${imgSide}active.png`;
+
         pizzaObject.push(item.classList[0]);
         pizza.allToppings.push(item.classList[0]);
         dblExEnable(double, extra);
@@ -165,258 +166,263 @@ function updatePizzaDisplay() {
   pizza.rightToppings.forEach((item) => {
     imgs += `<img src="right-topping-imgs/${item}.png" class="img-fluid toppings" alt="">`;
   });
+  console.log(imgs);
   return imgs;
 }
 
-toppings(
-  pepperoniClass,
-  "left",
-  "left",
-  pizza.leftToppings,
-  doubleClass[0],
-  extraClass[0]
-);
-toppings(
-  pepperoniClass,
-  "mid",
-  "full",
-  pizza.fullToppings,
-  doubleClass[0],
-  extraClass[0]
-);
-toppings(
-  pepperoniClass,
-  "right",
-  "right",
-  pizza.rightToppings,
-  doubleClass[0],
-  extraClass[0]
-);
+function start() {
+  toppings(
+    pepperoniClass,
+    "left",
+    "left",
+    pizza.leftToppings,
+    doubleClass[0],
+    extraClass[0]
+  );
+  toppings(
+    pepperoniClass,
+    "mid",
+    "full",
+    pizza.fullToppings,
+    doubleClass[0],
+    extraClass[0]
+  );
+  toppings(
+    pepperoniClass,
+    "right",
+    "right",
+    pizza.rightToppings,
+    doubleClass[0],
+    extraClass[0]
+  );
 
-toppings(
-  chickenClass,
-  "left",
-  "left",
-  pizza.leftToppings,
-  doubleClass[1],
-  extraClass[1]
-);
-toppings(
-  chickenClass,
-  "mid",
-  "full",
-  pizza.fullToppings,
-  doubleClass[1],
-  extraClass[1]
-);
-toppings(
-  chickenClass,
-  "right",
-  "right",
-  pizza.rightToppings,
-  doubleClass[1],
-  extraClass[1]
-);
+  toppings(
+    chickenClass,
+    "left",
+    "left",
+    pizza.leftToppings,
+    doubleClass[1],
+    extraClass[1]
+  );
+  toppings(
+    chickenClass,
+    "mid",
+    "full",
+    pizza.fullToppings,
+    doubleClass[1],
+    extraClass[1]
+  );
+  toppings(
+    chickenClass,
+    "right",
+    "right",
+    pizza.rightToppings,
+    doubleClass[1],
+    extraClass[1]
+  );
 
-toppings(
-  beefClass,
-  "left",
-  "left",
-  pizza.leftToppings,
-  doubleClass[2],
-  extraClass[2]
-);
-toppings(
-  beefClass,
-  "mid",
-  "full",
-  pizza.fullToppings,
-  doubleClass[2],
-  extraClass[2]
-);
-toppings(
-  beefClass,
-  "right",
-  "right",
-  pizza.rightToppings,
-  doubleClass[2],
-  extraClass[2]
-);
+  toppings(
+    beefClass,
+    "left",
+    "left",
+    pizza.leftToppings,
+    doubleClass[2],
+    extraClass[2]
+  );
+  toppings(
+    beefClass,
+    "mid",
+    "full",
+    pizza.fullToppings,
+    doubleClass[2],
+    extraClass[2]
+  );
+  toppings(
+    beefClass,
+    "right",
+    "right",
+    pizza.rightToppings,
+    doubleClass[2],
+    extraClass[2]
+  );
 
-toppings(
-  sausageClass,
-  "left",
-  "left",
-  pizza.leftToppings,
-  doubleClass[3],
-  extraClass[3]
-);
-toppings(
-  sausageClass,
-  "mid",
-  "full",
-  pizza.fullToppings,
-  doubleClass[3],
-  extraClass[3]
-);
-toppings(
-  sausageClass,
-  "right",
-  "right",
-  pizza.rightToppings,
-  doubleClass[3],
-  extraClass[3]
-);
+  toppings(
+    sausageClass,
+    "left",
+    "left",
+    pizza.leftToppings,
+    doubleClass[3],
+    extraClass[3]
+  );
+  toppings(
+    sausageClass,
+    "mid",
+    "full",
+    pizza.fullToppings,
+    doubleClass[3],
+    extraClass[3]
+  );
+  toppings(
+    sausageClass,
+    "right",
+    "right",
+    pizza.rightToppings,
+    doubleClass[3],
+    extraClass[3]
+  );
 
-toppings(
-  steakClass,
-  "left",
-  "left",
-  pizza.leftToppings,
-  doubleClass[4],
-  extraClass[4]
-);
-toppings(
-  steakClass,
-  "mid",
-  "full",
-  pizza.fullToppings,
-  doubleClass[4],
-  extraClass[4]
-);
-toppings(
-  steakClass,
-  "right",
-  "right",
-  pizza.rightToppings,
-  doubleClass[4],
-  extraClass[4]
-);
+  toppings(
+    steakClass,
+    "left",
+    "left",
+    pizza.leftToppings,
+    doubleClass[4],
+    extraClass[4]
+  );
+  toppings(
+    steakClass,
+    "mid",
+    "full",
+    pizza.fullToppings,
+    doubleClass[4],
+    extraClass[4]
+  );
+  toppings(
+    steakClass,
+    "right",
+    "right",
+    pizza.rightToppings,
+    doubleClass[4],
+    extraClass[4]
+  );
 
-toppings(
-  greenPeppersClass,
-  "left",
-  "left",
-  pizza.leftToppings,
-  doubleClass[5],
-  extraClass[5]
-);
-toppings(
-  greenPeppersClass,
-  "mid",
-  "full",
-  pizza.fullToppings,
-  doubleClass[5],
-  extraClass[5]
-);
-toppings(
-  greenPeppersClass,
-  "right",
-  "right",
-  pizza.rightToppings,
-  doubleClass[5],
-  extraClass[5]
-);
+  toppings(
+    greenPeppersClass,
+    "left",
+    "left",
+    pizza.leftToppings,
+    doubleClass[5],
+    extraClass[5]
+  );
+  toppings(
+    greenPeppersClass,
+    "mid",
+    "full",
+    pizza.fullToppings,
+    doubleClass[5],
+    extraClass[5]
+  );
+  toppings(
+    greenPeppersClass,
+    "right",
+    "right",
+    pizza.rightToppings,
+    doubleClass[5],
+    extraClass[5]
+  );
 
-toppings(
-  cornClass,
-  "left",
-  "left",
-  pizza.leftToppings,
-  doubleClass[6],
-  extraClass[6]
-);
-toppings(
-  cornClass,
-  "mid",
-  "full",
-  pizza.fullToppings,
-  doubleClass[6],
-  extraClass[6]
-);
-toppings(
-  cornClass,
-  "right",
-  "right",
-  pizza.rightToppings,
-  doubleClass[6],
-  extraClass[6]
-);
+  toppings(
+    cornClass,
+    "left",
+    "left",
+    pizza.leftToppings,
+    doubleClass[6],
+    extraClass[6]
+  );
+  toppings(
+    cornClass,
+    "mid",
+    "full",
+    pizza.fullToppings,
+    doubleClass[6],
+    extraClass[6]
+  );
+  toppings(
+    cornClass,
+    "right",
+    "right",
+    pizza.rightToppings,
+    doubleClass[6],
+    extraClass[6]
+  );
 
-toppings(
-  jalapenosClass,
-  "left",
-  "left",
-  pizza.leftToppings,
-  doubleClass[7],
-  extraClass[7]
-);
-toppings(
-  jalapenosClass,
-  "mid",
-  "full",
-  pizza.fullToppings,
-  doubleClass[7],
-  extraClass[7]
-);
-toppings(
-  jalapenosClass,
-  "right",
-  "right",
-  pizza.rightToppings,
-  doubleClass[7],
-  extraClass[7]
-);
+  toppings(
+    jalapenosClass,
+    "left",
+    "left",
+    pizza.leftToppings,
+    doubleClass[7],
+    extraClass[7]
+  );
+  toppings(
+    jalapenosClass,
+    "mid",
+    "full",
+    pizza.fullToppings,
+    doubleClass[7],
+    extraClass[7]
+  );
+  toppings(
+    jalapenosClass,
+    "right",
+    "right",
+    pizza.rightToppings,
+    doubleClass[7],
+    extraClass[7]
+  );
 
-toppings(
-  tomatoesClass,
-  "left",
-  "left",
-  pizza.leftToppings,
-  doubleClass[8],
-  extraClass[8]
-);
-toppings(
-  tomatoesClass,
-  "mid",
-  "full",
-  pizza.fullToppings,
-  doubleClass[8],
-  extraClass[8]
-);
-toppings(
-  tomatoesClass,
-  "right",
-  "right",
-  pizza.rightToppings,
-  doubleClass[8],
-  extraClass[8]
-);
+  toppings(
+    tomatoesClass,
+    "left",
+    "left",
+    pizza.leftToppings,
+    doubleClass[8],
+    extraClass[8]
+  );
+  toppings(
+    tomatoesClass,
+    "mid",
+    "full",
+    pizza.fullToppings,
+    doubleClass[8],
+    extraClass[8]
+  );
+  toppings(
+    tomatoesClass,
+    "right",
+    "right",
+    pizza.rightToppings,
+    doubleClass[8],
+    extraClass[8]
+  );
 
-toppings(
-  pineappleClass,
-  "left",
-  "left",
-  pizza.leftToppings,
-  doubleClass[9],
-  extraClass[9]
-);
-toppings(
-  pineappleClass,
-  "mid",
-  "full",
-  pizza.fullToppings,
-  doubleClass[9],
-  extraClass[9]
-);
-toppings(
-  pineappleClass,
-  "right",
-  "right",
-  pizza.rightToppings,
-  doubleClass[9],
-  extraClass[9]
-);
+  toppings(
+    pineappleClass,
+    "left",
+    "left",
+    pizza.leftToppings,
+    doubleClass[9],
+    extraClass[9]
+  );
+  toppings(
+    pineappleClass,
+    "mid",
+    "full",
+    pizza.fullToppings,
+    doubleClass[9],
+    extraClass[9]
+  );
+  toppings(
+    pineappleClass,
+    "right",
+    "right",
+    pizza.rightToppings,
+    doubleClass[9],
+    extraClass[9]
+  );
+}
+
+// start();
 
 //Pre-built Pizzas
 
@@ -569,6 +575,10 @@ bodyId.addEventListener("click", () => {
     pizza.allToppings.length + doubleExtraPrice(doubleClass, extraClass)
   );
   doubleExtraPrice(doubleClass, extraClass);
+
+  console.log(pizza.leftToppings);
+  console.log(pizza.fullToppings);
+  console.log(pizza.rightToppings);
 });
 
 //Display Thank You
@@ -635,12 +645,14 @@ function fullReset() {
   defaultButtonSides(jalapenosClass);
   defaultButtonSides(tomatoesClass);
   defaultButtonSides(pineappleClass);
+  sizeBtnClass[0].checked = true;
+  orderSizeId.innerHTML = `<h6>Small Pizza<h6>`;
   pizza.size = "small";
   pizza.price = 5;
-  pizza.leftToppings = [];
-  pizza.fullToppings = [];
-  pizza.rightToppings = [];
-  pizza.allToppings = [];
+  pizza.leftToppings.splice(0, pizza.leftToppings.length);
+  pizza.fullToppings.splice(0, pizza.fullToppings.length);
+  pizza.rightToppings.splice(0, pizza.rightToppings.length);
+  pizza.allToppings.splice(0, pizza.allToppings.length);
   dblExDisable(doubleClass[0], extraClass[0]);
   dblExDisable(doubleClass[1], extraClass[1]);
   dblExDisable(doubleClass[2], extraClass[2]);
@@ -652,3 +664,5 @@ function fullReset() {
   dblExDisable(doubleClass[8], extraClass[8]);
   dblExDisable(doubleClass[9], extraClass[9]);
 }
+
+start();
