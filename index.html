@@ -8,6 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <title>Pizza</title>
 </head>
@@ -18,7 +20,7 @@
     <div class="nav-extra"></div>
 
   <nav class="navbar navbar-expand-lg navbar-dark navbar-off-white bg-raisin-black">
-    <a class="navbar-brand" href="#"><b>Code-Pizza</b></a>
+    <img class="pizza-chef"src="images/chef2.png"><a class="navbar-brand pizza-font" href="#">Code-Pizza</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -51,63 +53,15 @@
   <img class="pizza-bg pizzaMobile" src="images/pizzaMobileHomePage.png" alt="">
 
 <!-- Customize -->
-      <div class="order-txt"><h4 class="border-btm-line">Customize Your Own Pizza! </h4><li>Start From Scratch!</li><li>First Topping <b>FREE!</b></li><li>5+ Toppings = <b>SPECIAL DEAL!</b>  </li></div>
-    <button type="button" class="order-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-      Customize
+      <div class="order-txt"><h4 class="border-btm-line pizza-font">Customize Your Own Pizza! </h4><li>Start From Scratch!</li><li>First Topping is <b>FREE!</b></li><li>5+ Toppings === <b>SPECIAL DEAL!</b>  </li></div>
+    <button type="button" class="order-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter" data-backdrop="static" data-keyboard="false">
+      <b>CUSTOMIZE</b>
     </button>
 </div>
 
-
-<!-- <div class="pizza-box">
-  <img class="pizza-bg" src="images/Pep.png" alt="">
-
-
-<div class="order-txt-2"><h4 class="border-btm-line">Start With Pepperoni! </h4><li>Smoked Pepperoni</li><li><b>FREE Topping</b></li><li>For Only $5!</b></li></div>
-<button id="prePep" type="button" class="order-btn-2 btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-  Customize
-</button>
-</div> -->
-<!-- 
-<div class="bg-padding"></div>
-<div class="pizza-box">
-  <img class="pizza-bg" src="images/Meat.png" alt="">
-
-
-<div class="order-txt"><h4 class="border-btm-line">For All The Meat Lovers!</h4><li>Pepperoni, Beef, Chicken, Sausage, and Steak!</li><li><b>SPECIAL DEAL!</b></li></div>
-<button id="preMeat" type="button" class="order-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-  Customize
-</button> -->
-<!-- </div>
-<div class="bg-padding"></div>
-<div class="pizza-box">
-  <img class="pizza-bg" src="images/Veggie.png" alt="">
-
-
-<div class="order-txt-2"><h4 class="border-btm-line">Our Healthy Veggie Pizza!</h4><li>Green Peppers, Tomatoes,<br> Pineapple, and Corn!</li><li>Thin Crust!</b></li></div>
-<button id="preVeggie" type="button" class="order-btn-2 btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-  Customize
-</button>
-</div> -->
-<!-- <div class="bg-padding"></div>
-<div class="pizza-box">
-  <img class="pizza-bg" src="images/Supreme.png" alt="">
-
-
-<div class="order-txt"><h4 class="border-btm-line">The Supreme Dream!</h4><li>Pepperoni, Beef, Tomatoes,<br>  and Green Peppers!</li><li>Thick Crust!</b></li></div>
-<button id="preSupreme" type="button" class="order-btn btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-  Customize
-</button>
-</div> -->
-<!-- <div class="bg-padding"></div>
-<div class="pizza-box">
-  <img class="pizza-bg" src="images/All.png" alt="">
-
-  
-  <div class="order-txt-2"><h4 class="border-btm-line">ALL OUT BABY! </h4><li><b>All Ten Toppings!</b></li><li>First Topping Still <b>FREE!</b></li><li><b>SPECIAL DEAL!</b></li></div>
-  <button id="preAll" type="button" class="order-btn-2 btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-   Customize
-  </button>
-</div> -->
+<!-- Pre Built Pizzas -->
+<div class="bg-padding card-home"></div>
+<div class="pizza-box bg-raisin-black white-txt  card-home"><h3 class="pizza-font">Pre-Built Pizzas</h3></div>
 
 
 <div class="bg-padding card-home"></div>
@@ -115,21 +69,23 @@
   <div class="card card-home">
     <img src="images/cheese.png" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-        Customize
+      <h4 class="card-title pizza-font">Cheese Pizza</h4>
+      <div class="border-btm-line"></div>
+      <p class="card-text">For those who like there pizza with no toppings. Only $5! You may adjust as needed to fit your pizza needs!</p>
+      <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter" data-backdrop="static" data-keyboard="false">
+        <b>ORDER NOW</b>
       </button>
     </div>
   </div>
-  
+
 <div class="card card-home">
   <img src="images/pep (2).png" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <button id="prePep" type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-      Customize
+    <h4 class="card-title pizza-font">Pepperoni Pizza</h4>
+    <div class="border-btm-line"></div>
+    <p class="card-text">For our pepperoni lovers out there! Our first topping is FREE! So the pepperoni is on us! Only $5! Perfect for everyone!</p>
+    <button id="prePep" type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter" data-backdrop="static" data-keyboard="false">
+      <b>ORDER NOW</b>
     </button>
   </div>
 </div>
@@ -137,10 +93,11 @@
 <div class="card card-home">
   <img src="images/meat (2).png" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <button id="preMeat" type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-      Customize
+    <h4 class="card-title pizza-font">Meat Lovers Pizza</h4>
+    <div class="border-btm-line"></div>
+    <p class="card-text">For those who love meat on their pizza! 5 flavorful meat toppings! With our 5+ toppings deal you get our SPECIAL DEAL!</p>
+    <button id="preMeat" type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter" data-backdrop="static" data-keyboard="false">
+      <b>ORDER NOW</b>
     </button>
   </div>
 </div>
@@ -148,10 +105,11 @@
 <div class="card card-home" >
   <img src="images/veggie (2).png" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <button id="preVeggie" type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-      Customize
+    <h4 class="card-title pizza-font">Veggie Pizza</h4>
+    <div class="border-btm-line"></div>
+    <p class="card-text">For our vegetarian lovers! This has all the veggies you need to make your pizza just for you! For only $7! </p>
+    <button id="preVeggie" type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter" data-backdrop="static" data-keyboard="false">
+      <b>ORDER NOW</b>
     </button>
   </div>
 </div>
@@ -159,10 +117,11 @@
 <div class="card card-home">
   <img src="images/supreme (2).png" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <button id="preSupreme" type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-  Customize
+    <h4 class="card-title pizza-font">Supreme Pizza</h4>
+    <div class="border-btm-line"></div>
+    <p class="card-text">Our classic Supreme Pizza! Has everything you need! Add one more topping and you can get our SPECIAL!</p>
+    <button id="preSupreme" type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter" data-backdrop="static" data-keyboard="false">
+      <b>ORDER NOW</b>
 </button>
   </div>
 </div>
@@ -170,17 +129,18 @@
 <div class="card card-home">
   <img src="images/all (2).png" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <button id="preAll" type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter">
-      Customize
+    <h4 class="card-title pizza-font">"ALL-OUT" Pizza</h4>
+    <div class="border-btm-line"></div>
+    <p class="card-text">Going all out on our ALL-OUT PIZZA! These are for the crazy pizza lovers out there who are up for the challenge!</p>
+    <button id="preAll" type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalCenter" data-backdrop="static" data-keyboard="false">
+      <b>ORDER NOW</b>
      </button>
   </div>
 </div>
 
-
-
 </div>
+
+<div class="bg-padding card-home"></div>
 
 
   
@@ -191,7 +151,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalCenterTitle">Customize Your Own Pizza!</h2>
+          <h2 class="modal-title pizza-font" id="exampleModalCenterTitle">Customize Your Own Pizza!</h2>
           <button type="button" class="close closeButton" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -209,12 +169,19 @@
 
                   </div>
                   <br>
-                  <h3><b>Your Order</b>:</h3>
+                  <h3 class="pizza-font">Your Order:</h3>
                   <p></p>
-                  <h6 id="orderSize">Small Pizza</h6>
+                  <h6 id="orderSize">10" Small Pizza</h6>
                   <p></p>
                   <p><b>Toppings:</b></p>
+                  <div class="row">
+                    <div class="col-6 column-large">
                   <div id="addedToppings"></div>
+                </div>
+                <div class="col-6 column-large">
+                  <div id="addedToppings2"></div>
+                </div>
+                </div>
                   
               
                   
@@ -223,17 +190,18 @@
               </div>
               <div class="col-7 border-left-line">
                 <!-- Users Topping Selection -->
-                <h5><b>Size:</b></h5>
+                <h5 class="pizza-font">Size:</h5>
                 <input class="sizeBtn Small" type="radio" name="choice" checked="checked"> Small<br>
                 <input class="sizeBtn Medium" type="radio" name="choice"> Medium<br>
                 <input class="sizeBtn Large" type="radio" name="choice"> Large<br>
                 <input class="sizeBtn extraLarge" type="radio" name="choice"> Extra Large<br><br>
                 <div class="border-btm-line"></div><br>
-                <h5><b>Toppings:</b></h5>
+                <h5 class="pizza-font">Toppings:</h5>
                 <div class="row">
                 <div class="col-5 column-large">
                   <p></p>
-                <h6>Meats</h6>
+                <h6 >Meats</h6>
+                <p class="border-btm-line"></p>
                 Pepperoni:
                 <img class="pepperoni left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
                 <img class="pepperoni mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
@@ -265,6 +233,7 @@
               <div class="col-5 border-left-line column-large">
                 <p></p>
                 <h6>Vegetables/Fruit</h6>
+                <p class="border-btm-line"></p>
                 Green Peppers:
                 <img class="greenpeppers left pizza-size-button" src="images/leftcircle.png" alt="" srcset="">
                 <img class="greenpeppers mid pizza-size-button" src="images/fullcircle.png" alt="" srcset="">
@@ -301,11 +270,11 @@
           </div>
         </div>
         <div class="modal-footer">
-          <div id="totalPrice">Total:</div>
+          <h3 id="totalPrice" class="pizza-font">Total:</h3>
          <div>
           <button class="closeButton" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="modal"
-            data-target="#thankYouModal">Add To Order</button>
+            data-target="#thankYouModal" data-backdrop="static" data-keyboard="false">Add To Order</button>
           </div>
         </div>
       </div>
@@ -318,7 +287,7 @@
     <div id="modal-dialog-thank-you" class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title" id="thankYouModalTitle">Thank You For Your Order!</h2>
+          <h2 class="modal-title pizza-font" id="thankYouModalTitle">Thank You For Your Order!</h2>
           <button type="button" class="close closeButton" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

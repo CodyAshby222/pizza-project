@@ -1,4 +1,5 @@
 const addedToppingsId = document.getElementById("addedToppings");
+const addedToppingsTwoId = document.getElementById("addedToppings2");
 const totalPriceId = document.getElementById("totalPrice");
 const pizzaToppingDisplayId = document.getElementById("pizzaToppingDisplay");
 const sizeBtnClass = document.getElementsByClassName("sizeBtn");
@@ -42,33 +43,33 @@ let pizza = {
 // Size/Price - Changes Pizza size/price per radio click
 
 sizeBtnClass[0].addEventListener("click", () => {
-  size(0, 6);
+  size(0, 6, 10);
   pizza.price = 5;
 });
 
 sizeBtnClass[1].addEventListener("click", () => {
-  size(1, 5);
+  size(1, 5, 12);
   pizza.price = 6;
 });
 
 sizeBtnClass[2].addEventListener("click", () => {
-  size(2, 4);
+  size(2, 4, 14);
   pizza.price = 7;
 });
 
 sizeBtnClass[3].addEventListener("click", () => {
-  size(3, 3);
+  size(3, 3, 16);
   pizza.price = 8;
 });
 
-function size(btnNum, textSize) {
+function size(btnNum, textSize, inches) {
   if (sizeBtnClass[btnNum].checked) {
     pizza.size = sizeBtnClass[btnNum].classList[1];
     console.log(pizza.size);
     if (pizza.size === "extraLarge") {
-      orderSizeId.innerHTML = `<h${textSize}>Extra Large Pizza<h${textSize}>`;
+      orderSizeId.innerHTML = `<h${textSize}>${inches}" Extra Large Pizza<h${textSize}>`;
     } else {
-      orderSizeId.innerHTML = `<h${textSize}>${pizza.size} Pizza<h${textSize}>`;
+      orderSizeId.innerHTML = `<h${textSize}>${inches}" ${pizza.size} Pizza<h${textSize}>`;
     }
   }
 }
@@ -147,12 +148,22 @@ function defaultButtonSides(toppingsClass) {
 }
 
 function displayToppings() {
-  let toppingList = "cheese, ";
-  pizza.allToppings.forEach((item) => {
-    toppingList += ` ${item},`;
+  let toppingList = "<li>cheese</li>";
+  pizza.allToppings.forEach((item, index) => {
+    if (index % 2 == 1) {
+      toppingList += `<li>${item}</li>`;
+    }
   });
-  let modifiedToppingList = toppingList.slice(0, -1); //'abcde'
-  return modifiedToppingList;
+  return toppingList;
+}
+function displayToppingsTwo() {
+  let secondToppingList = "";
+  pizza.allToppings.forEach((item, index) => {
+    if (index % 2 == 0) {
+      secondToppingList += `<li>${item}</li>`;
+    }
+  });
+  return secondToppingList;
 }
 
 function updatePizzaDisplay() {
@@ -422,8 +433,6 @@ function start() {
   );
 }
 
-// start();
-
 //Pre-built Pizzas
 
 prePepId.addEventListener("click", () => {
@@ -504,9 +513,10 @@ function priceOfToppings(toppingPrice, totalToppings) {
   }
   if (totalToppings > 4) {
     toppingPrice -= 1;
-    totalPriceId.innerHTML = "<b>SPECIAL DEAL!</b><br>Total: $" + toppingPrice;
+    totalPriceId.innerHTML =
+      "<b>SPECIAL DEAL!</b><br>Total: $" + toppingPrice + ".00";
   } else {
-    totalPriceId.innerHTML = "Total: $" + toppingPrice;
+    totalPriceId.innerHTML = "Total: $" + toppingPrice + ".00";
   }
   thankYouIdTwo.innerHTML = "<h4>Your Total is $" + toppingPrice + ".00</h4>";
 }
@@ -569,6 +579,7 @@ dblExDisable(doubleClass[9], extraClass[9]);
 bodyId.addEventListener("click", () => {
   filterAllToppings();
   addedToppingsId.innerHTML = displayToppings();
+  addedToppingsTwoId.innerHTML = displayToppingsTwo();
   pizzaToppingDisplayId.innerHTML = updatePizzaDisplay();
   priceOfToppings(
     pizza.price,
@@ -590,6 +601,7 @@ let am = "AM";
 let time = `${hours}:${minutes} ${am}`;
 
 function displayThankYou() {
+  console.log(minutes);
   if (minutes > 59) {
     updateTime();
   }
@@ -599,6 +611,7 @@ function displayThankYou() {
   if (hours > 12) {
     updateMilitaryTimePt2();
   }
+  console.log(minutes);
   thankYouId.innerHTML = `<h6>Your order will be available for pick up at:<br>
       ${time}</h6> `;
 }
@@ -606,17 +619,29 @@ function displayThankYou() {
 function updateTime() {
   minutes = minutes - 60;
   hours = hours + 1;
-  time = `${hours}:${minutes} ${am}`;
+  if (minutes < 10) {
+    time = `${hours}:0${minutes} ${am}`;
+  } else {
+    time = `${hours}:${minutes} ${am}`;
+  }
 }
 
 function updateMilitaryTime() {
   am = "PM";
-  time = `${hours}:${minutes} ${am}`;
+  if (minutes < 10) {
+    time = `${hours}:0${minutes} ${am}`;
+  } else {
+    time = `${hours}:${minutes} ${am}`;
+  }
 }
 
 function updateMilitaryTimePt2() {
   hours = hours - 12;
-  time = `${hours}:${minutes} ${am}`;
+  if (minutes < 10) {
+    time = `${hours}:0${minutes} ${am}`;
+  } else {
+    time = `${hours}:${minutes} ${am}`;
+  }
 }
 
 displayThankYou();
@@ -646,7 +671,7 @@ function fullReset() {
   defaultButtonSides(tomatoesClass);
   defaultButtonSides(pineappleClass);
   sizeBtnClass[0].checked = true;
-  orderSizeId.innerHTML = `<h6>Small Pizza<h6>`;
+  orderSizeId.innerHTML = `<h6>10" Small Pizza<h6>`;
   pizza.size = "small";
   pizza.price = 5;
   pizza.leftToppings.splice(0, pizza.leftToppings.length);
